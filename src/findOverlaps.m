@@ -11,7 +11,10 @@ function [overlaps] = findOverlaps(filelist)
 if nargin == 1
 %% Find duplications in filenames
 % input filelist is a .txt file of filenames
-inputList = readlines(filelist);
+inputList = readlines(filelist,'EmptyLineRule','skip');
+
+% files that will be checked for duplication
+recmat = cellstr(inputList);
 
 % Initialize a logical array to track duplicates
 isDuplicate = false(size(inputList));
@@ -32,13 +35,8 @@ end
     else
         disp('The list does not contain duplicates.');
     end
-end
 
-%% LOAD SONGBOUT AND SYLLABLE ONSET AND OFFSET TIMES ACROSS ALL FILES
-% for saving syllable and songobut overlaps
-savename = 'syllable_overlaps.mat';
-overlaps = struct();
-
+else
 
 % generate list of songbout filenames in the directory
 files = dir('*_songbout*.mat'); files = struct2table(files);
@@ -47,6 +45,13 @@ for fn = 1:size(files,1)
     isrec(fn,1) = length(filename) < 39 && length(filename) > 35;
 end
 recmat = files.name(isrec);
+
+end
+
+%% LOAD SONGBOUT AND SYLLABLE ONSET AND OFFSET TIMES ACROSS ALL FILES
+% for saving syllable and songobut overlaps
+savename = 'syllable_overlaps.mat';
+overlaps = struct();
 
 
 % initialize variables
@@ -243,6 +248,6 @@ legend(files_overlaps,'Location', 'eastoutside','Interpreter','latex')
 
 
 % Save duplications
-save(savename,'org_fn', 'songbout_ons','songbout_offs','overlaps',...
+save(savename,'recmat', 'songbout_ons','songbout_offs','overlaps',...
     'songbout_ons_intan', 'songbout_offs_intan')
 end
