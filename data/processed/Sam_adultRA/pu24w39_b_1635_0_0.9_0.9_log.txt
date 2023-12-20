@@ -1,0 +1,380 @@
+Total entropy: calculated using 0 random subsamples of 0.90 of the data
+Conditional entropy: calculated using 0 random subsamples of 0.90 of the data
+************************************************************
+dt = 40 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 1.887268 		 0.043387 
+    S_nsb = 	    dS_nsb =
+	 1.887268 		 0.043387 
+
+  Weighted average values: 
+    S_nsb = 	    dS_nsb =
+	 1.887268 		 0.043387 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 1.887268 		 0.043387 
+
+Pitch
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.816010 	 1.932389 		 0.061793 	 0.060688 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.816010 	 1.932389 		 0.061793 	 0.060688 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.816010 	 1.932389 		 0.061793 	 0.060688 
+
+Amplitude
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.004194 	 1.742143 		 0.062058 	 0.055598 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.004194 	 1.742143 		 0.062058 	 0.055598 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.004194 	 1.742143 		 0.062058 	 0.055598 
+
+Spectral entropy
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.723048 	 2.009389 		 0.057526 	 0.063928 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.723048 	 2.009389 		 0.057526 	 0.063928 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.723048 	 2.009389 		 0.057526 	 0.063928 
+
+3D Acoustics
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.717709 	 2.023865 		 0.055074 	 0.063389 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.717709 	 2.023865 		 0.055074 	 0.063389 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.717709 	 2.023865 		 0.055074 	 0.063389 
+
+************************************************************
+dt = 20 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 1.976065 		 0.051582 
+    S_nsb = 	    dS_nsb =
+	 1.976065 		 0.051582 
+
+  Weighted average values: 
+    S_nsb = 	    dS_nsb =
+	 1.976065 		 0.051582 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 1.976065 		 0.051582 
+
+Pitch
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.914512 	 2.001387 		 0.073259 	 0.070351 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.914512 	 2.001387 		 0.073259 	 0.070351 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.914512 	 2.001387 		 0.073259 	 0.070351 
+
+Amplitude
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.091792 	 1.835208 		 0.072325 	 0.068961 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.091792 	 1.835208 		 0.072325 	 0.068961 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.091792 	 1.835208 		 0.072325 	 0.068961 
+
+Spectral entropy
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.800523 	 2.099129 		 0.068511 	 0.073840 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.800523 	 2.099129 		 0.068511 	 0.073840 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.800523 	 2.099129 		 0.068511 	 0.073840 
+
+3D Acoustics
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.804641 	 2.114159 		 0.067712 	 0.073644 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.804641 	 2.114159 		 0.067712 	 0.073644 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 1.804641 	 2.114159 		 0.067712 	 0.073644 
+
+************************************************************
+dt = 10 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 2.742360 		 0.060234 
+    S_nsb = 	    dS_nsb =
+	 2.742360 		 0.060234 
+
+  Weighted average values: 
+    S_nsb = 	    dS_nsb =
+	 2.742360 		 0.060234 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 2.742360 		 0.060234 
+
+Pitch
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.652644 	 2.778494 		 0.088574 	 0.077809 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.652644 	 2.778494 		 0.088574 	 0.077809 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.652644 	 2.778494 		 0.088574 	 0.077809 
+
+Amplitude
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.840502 	 2.604245 		 0.084847 	 0.079488 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.840502 	 2.604245 		 0.084847 	 0.079488 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.840502 	 2.604245 		 0.084847 	 0.079488 
+
+Spectral entropy
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.530036 	 2.892707 		 0.081196 	 0.084020 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.530036 	 2.892707 		 0.081196 	 0.084020 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.530036 	 2.892707 		 0.081196 	 0.084020 
+
+3D Acoustics
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.532061 	 2.905113 		 0.080500 	 0.083815 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.532061 	 2.905113 		 0.080500 	 0.083815 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 2.532061 	 2.905113 		 0.080500 	 0.083815 
+
+************************************************************
+dt = 5 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 3.570562 		 0.076043 
+    S_nsb = 	    dS_nsb =
+	 3.570562 		 0.076043 
+
+  Weighted average values: 
+    S_nsb = 	    dS_nsb =
+	 3.570562 		 0.076043 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 3.570562 		 0.076043 
+
+Pitch
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.495244 	 3.611453 		 0.113150 	 0.100380 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.495244 	 3.611453 		 0.113150 	 0.100380 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.495244 	 3.611453 		 0.113150 	 0.100380 
+
+Amplitude
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.709778 	 3.409611 		 0.105358 	 0.106405 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.709778 	 3.409611 		 0.105358 	 0.106405 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.709778 	 3.409611 		 0.105358 	 0.106405 
+
+Spectral entropy
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.320014 	 3.762185 		 0.103956 	 0.107505 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.320014 	 3.762185 		 0.103956 	 0.107505 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.320014 	 3.762185 		 0.103956 	 0.107505 
+
+3D Acoustics
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.324540 	 3.787723 		 0.106869 	 0.105177 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.324540 	 3.787723 		 0.106869 	 0.105177 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 3.324540 	 3.787723 		 0.106869 	 0.105177 
+
+************************************************************
+dt = 2 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 5.680948 		 0.077049 
+    S_nsb = 	    dS_nsb =
+	 5.680948 		 0.077049 
+
+  Weighted average values: 
+    S_nsb = 	    dS_nsb =
+	 5.680948 		 0.077049 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 5.680948 		 0.077049 
+
+Pitch
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.452647 	 5.839019 		 0.106376 	 0.110620 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.452647 	 5.839019 		 0.106376 	 0.110620 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.452647 	 5.839019 		 0.106376 	 0.110620 
+
+Amplitude
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.756523 	 5.488349 		 0.110580 	 0.102812 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.756523 	 5.488349 		 0.110580 	 0.102812 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.756523 	 5.488349 		 0.110580 	 0.102812 
+
+Spectral entropy
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.388747 	 5.882215 		 0.104790 	 0.110595 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.388747 	 5.882215 		 0.104790 	 0.110595 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.388747 	 5.882215 		 0.104790 	 0.110595 
+
+3D Acoustics
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.403968 	 5.829818 		 0.103207 	 0.109163 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.403968 	 5.829818 		 0.103207 	 0.109163 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 5.403968 	 5.829818 		 0.103207 	 0.109163 
+
+************************************************************
+dt = 1 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 7.534465 		 0.083100 
+    S_nsb = 	    dS_nsb =
+	 7.534465 		 0.083100 
+
+  Weighted average values: 
+    S_nsb = 	    dS_nsb =
+	 7.534465 		 0.083100 
+  Original values: 
+    S_nsb = 	    dS_nsb =
+	 7.534465 		 0.083100 
+
+Pitch
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.199923 	 7.627740 		 0.119427 	 0.120556 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.199923 	 7.627740 		 0.119427 	 0.120556 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.199923 	 7.627740 		 0.119427 	 0.120556 
+
+Amplitude
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.437811 	 7.396902 		 0.121814 	 0.119006 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.437811 	 7.396902 		 0.121814 	 0.119006 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.437811 	 7.396902 		 0.121814 	 0.119006 
+
+Spectral entropy
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.135450 	 7.686067 		 0.115417 	 0.123598 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.135450 	 7.686067 		 0.115417 	 0.123598 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.135450 	 7.686067 		 0.115417 	 0.123598 
+
+3D Acoustics
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.273210 	 7.640962 		 0.117168 	 0.124660 
+
+  Weighted average values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.273210 	 7.640962 		 0.117168 	 0.124660 
+
+  Original values: 
+    S_nsb_cond = 			    dS_nsb_cond =
+	 7.273210 	 7.640962 		 0.117168 	 0.124660 
+
