@@ -1,4 +1,7 @@
 function [spects_matrix,labels_all,S] = getSpectMatrix(syllables,params)
+% concatenates spectrograms for labeled syllables retrieved from .not.mat
+% files. Spectorgrams are cut into equal durations. 
+
 % Import the necessary libraries
 import matlab.io.*
 import statistics.toolbox.*
@@ -92,14 +95,14 @@ for i = 1:length(recmat)
 
             syl_wav = rawsong(on_id:off_id); %raw waveform for current syllable
             [S1] = spect_from_waveform(syl_wav,Fs,0,spect_params); %get syllable spectrogram
-            S{x,i} = S1;
-            Slog = log(1+abs(S1)); % use log-scale for visualization
+            S{x,i} = S1; % save original spectrogram
             
             % reshape multidim spec to 1 row for each trial            
-            S_collapsed = reshape(Slog,1,[]);
+            S_collapsed = reshape(S1,1,[]);
             
             % cut the spectrograms to equal duration lengths
             S_cut = S_collapsed(:,1:numWindows);
+
             % concatenate all spect trials
             spects_matrix = [spects_matrix; S_cut]; % use log-scale for visualization
         end
