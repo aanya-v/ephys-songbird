@@ -184,10 +184,10 @@ end
                 save_intan_as_mat(current_fname)
             end
             
-          load(mat_fname, 'board_adc_data');% faster than loading the .rhd
-          load(mat_fname, 'frequency_parameters');
+          load(mat_fname, 'board_adc_data','frequency_parameters','t_board_adc');% faster than loading the .rhd
           songdata = board_adc_data; %entire audio trace for file
           fs = frequency_parameters.amplifier_sample_rate;
+          t1_intan = t_board_adc(1); % in seconds, t=0 is when the record button was pressed
 
        elseif strcmp(filetype,'cbin')
           [songdata, fs] = evsoundin(cd,current_fname,'obs0'); %entire audio trace for file. assumes obs0 is audio.
@@ -283,6 +283,7 @@ end
 
         neuralcase.recfilename(ct,1) = files(i,1);
         neuralcase.syl_ons_offs(ct,:) = [all_motif_syl_onsets,all_motif_syl_offsets]; 
+        neuralcase.syl_ons_offs_intan(ct,:) = [all_motif_syl_onsets + t1_intan,all_motif_syl_offsets + t1_intan]; 
 
         %assemble previous and next syllables into a string array. If there
         %is an intersection with the start or end of a file the array will
@@ -335,6 +336,7 @@ end
         neuralcase.syls_next(ct,:) = next_syls;
         neuralcase.syl_in_seq(ct,:) = strcat(prev_syls(6), syl_or_seq, next_syls(1));
         neuralcase.spiketrains{ct,1} = seq_spikes;
+        neuralcase.spiketrains_intan{ct,1} = seq_spikes + t1_intan;
 
         if exist('weighted_avg_labelvec','var')
             motif_spikes{7} = weighted_avg_labelvec(seq_start(c):seq_end(c));
