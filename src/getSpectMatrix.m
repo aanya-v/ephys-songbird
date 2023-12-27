@@ -99,7 +99,7 @@ for i = 1:length(recmat)
             S_collapsed = reshape(Slog,1,[]);
             
             % cut the spectrograms to equal duration lengths
-            S_cut = S_collapsed(:,end-numWindows:end);
+            S_cut = S_collapsed(:,1:numWindows);
             % concatenate all spect trials
             spects_matrix = [spects_matrix; S_cut]; % use log-scale for visualization
         end
