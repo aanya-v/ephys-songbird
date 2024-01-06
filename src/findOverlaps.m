@@ -59,6 +59,8 @@ org_fn = cell(length(recmat),1); % store names of each unique recording file loo
 songbout_file_pre = [];
 new_ons_pre = [];
 new_offs_pre =[]; 
+onsets_all = [];
+offsets_all = [];
 songbout_ons = zeros(length(recmat),1);
 songbout_offs = zeros(length(recmat),1);
 songbout_ons_intan = zeros(length(recmat),1);
@@ -87,11 +89,20 @@ for i = 1:length(recmat)
         % convert syllable onsets/offsets to seconds
         onsets_s = onsets./1000;
         offsets_s = offsets./1000;
-   
+
+        % save intan timestamps of onset/offsets to .not.mat
+        onsets_intan = (onsets_s + t_board_adc(1))*1000;
+        offsets_intan = (offsets_s + t_board_adc(1))*1000;
+        save(fn_notmat,'onsets_intan','offsets_intan','-append')
+
         % calculate and concatenate the intan timestamp of syl onset and offset times
         songbout_file_pre = [songbout_file_pre; repmat(string(filename),length(onsets_s),1)];
         new_ons_pre = [new_ons_pre; onsets_s + t_board_adc(1)];
         new_offs_pre = [new_offs_pre; offsets_s + t_board_adc(1)];
+
+        % concatenate all onset/offset times in relation to songbout file
+        onsets_all = [onsets_all; onsets];
+        offsets_all = [offsets_all; offsets];
 
     end
 end
@@ -100,12 +111,15 @@ end
 %% FIND OVERLAPS IN SYLLABLES
 
 
-% Check for overlap in time intervals
+% Sort syllable trials by onset times
 [ons_sorted,indices] = sort(new_ons_pre);
 new_ons = new_ons_pre(indices);
 new_offs = new_offs_pre(indices);
 songbout_file = songbout_file_pre(indices);
+onsets_all = onsets_all(indices);
+offsets_all = offsets_all(indices);
 
+% Check for overlap in time intervals
 overlapSyls = new_ons(2:end) < new_offs(1:end-1);
 overlaps.syllables_times(:,1) = new_ons(overlapSyls);
 overlaps.syllables_times(:,2) = new_offs(overlapSyls);
@@ -113,6 +127,13 @@ overlaps.syllables_times(:,3) = new_ons(find(overlapSyls)+1);
 overlaps.syllables_times(:,4) = new_offs(find(overlapSyls)+1);
 overlaps.syllables_filename(:,1) = songbout_file(overlapSyls);
 overlaps.syllables_filename(:,2) = songbout_file(find(overlapSyls)+1);
+
+overlaps.syllables_ons_offs_by_songboutfile(:,1) = songbout_file(overlapSyls);
+overlaps.syllables_ons_offs_by_songboutfile(:,2) = onsets_all(overlapSyls);
+overlaps.syllables_ons_offs_by_songboutfile(:,3) = offsets_all(overlapSyls);
+overlaps.syllables_ons_offs_by_songboutfile(:,4) = songbout_file(find(overlapSyls)+1);
+overlaps.syllables_ons_offs_by_songboutfile(:,5) = onsets_all(find(overlapSyls)+1);
+overlaps.syllables_ons_offs_by_songboutfile(:,6) = offsets_all(find(overlapSyls)+1);
 hasOverlap = sum(new_ons(2:end) < new_offs(1:end-1));
 
 if hasOverlap
