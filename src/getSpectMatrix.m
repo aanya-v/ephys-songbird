@@ -1,4 +1,4 @@
-function [spects_matrix,labels_all,S] = getSpectMatrix(syllables,params)
+function [spects_matrix,labels_all,spectsArray,rawAudioArray] = getSpectMatrix(syllables,params)
 % concatenates spectrograms for labeled syllables retrieved from .not.mat
 % files. Spectorgrams are cut into equal durations. 
 
@@ -11,9 +11,14 @@ Fs = 30000; %sampling rate in Hz
 
 spect_params = params.overlap_windowsize;
 numWindows = params.numWindows;
+minDur = params.min_max_duration(1); %minimum syllable duration in msec
+maxDur = params.min_max_duration(2); %maximum syllable duration in msec
+
 if nargin ==1    
     spect_params = [0.9 4]; %[percent_overlap window_size_in_milliseconds]
     numWindows = 60; % takes the last 60 windows of the spectrogram
+    minDur = 20;
+    maxDur = 200;
 end
 
 %% compile spectrogram matrix of syllables
@@ -26,7 +31,15 @@ for fn = 1:size(files,1)
 end
 recmat = string(recname);
 
-% Initialize variables
+%% Initialize variables
+%  Output arguments
+labels_all = [];
+spects_matrix = [];
+spectsArray={}; % saves original spectrograms generated
+rawAudioArray={}; % saves raw audio vectors
+
+
+% subvariables
 org_fn = cell(length(recmat),1); % store names of each unique recording file looped through
 songbout_fn = [];
 songbout_ons = zeros(length(recmat),1);
@@ -35,8 +48,10 @@ songbout_ons_intan = zeros(length(recmat),1);
 songbout_offs_intan = zeros(length(recmat),1);
 ons_intan_all = [];
 offs_intan_all = [];
-labels_all = [];
-spects_matrix = [];
+win_lengths = [];
+P={}; % saves original spectrograms generated
+A={}; % saves raw audio vectors
+
 
 %% extract songbout and syllable times from songbout files
 for i = 1:length(recmat)
@@ -65,12 +80,24 @@ for i = 1:length(recmat)
         offs_intan =[]; 
         select_idx = [];
         labels_select =[];
+        whichSyls = [];
         
-        % choose trials for only desired syllables
-        select_idx = ismember(labels, syllables);
-        labels_select = labels(select_idx);
-        onsets = onsets(select_idx);
-        offsets = offsets(select_idx);
+        
+        % choose trials for only desired syllables labels
+        if syllables == "all"
+            labels_select = labels; 
+        else
+            select_idx = ismember(labels, syllables);
+            labels_select = labels(select_idx);
+            onsets = onsets(select_idx);
+            offsets = offsets(select_idx);
+        end
+
+        % select only syllables with minimum and maximum durations
+        whichSyls = find(offsets-onsets >= minDur & offsets-onsets <= maxDur);
+        labels_select = labels_select(whichSyls);
+        onsets = onsets(whichSyls);
+        offsets = offsets(whichSyls);
 
         % store all of the labels
         labels_all = [labels_all, labels_select];
@@ -94,18 +121,46 @@ for i = 1:length(recmat)
             off_id = find(abs((t_board_adc-offs_intan(x)))==min(abs(t_board_adc-offs_intan(x)))); %...to syllable offset?
 
             syl_wav = rawsong(on_id:off_id); %raw waveform for current syllable
-            [S1] = spect_from_waveform(syl_wav,Fs,0,spect_params); %get syllable spectrogram
-            S{x,i} = S1; % save original spectrogram
+            [S1,~,~,P1] = spect_from_waveform(syl_wav,Fs,0,spect_params); %get syllable spectrogram
+
+            % spectrograms{i} = abs(S1).^2; % Power Spectrogram
+            
+            % save raw audio and original spectrograms
+            A{x,i} = syl_wav;
+            % S{x,i} = S1; % save original spectrogram
+            P{x,i} = P1; % save Power Spectral Density (abs(S1).^2)
+
+            % cut the spectrograms to equal duration lengths
+            P_cut = P1(:,1:numWindows);
             
             % reshape multidim spec to 1 row for each trial            
-            S_collapsed = reshape(S1,1,[]);
+            P_collapsed = reshape(P_cut,1,[]);
             
-            % cut the spectrograms to equal duration lengths
-            S_cut = S_collapsed(:,1:numWindows);
-
             % concatenate all spect trials
-            spects_matrix = [spects_matrix; S_cut]; % use log-scale for visualization
+            spects_matrix = [spects_matrix; P_collapsed]; 
+
+            % concatenate the uncut no of windows per syllable
+            win_lengths = [win_lengths; size(S1,2)];
         end
     end
 end
+
+min_win_length = min(win_lengths)
+max_win_length = max(win_lengths)
+ind_min = find(win_lengths == min_win_length)
+figure;histogram(win_lengths); title(org_fn{i}(1:17)); 
+syl_min_win = labels_all(ind_min)
+
+spectsArray=flattenArray(P); % saves original spectrograms generated
+rawAudioArray=flattenArray(A); % saves raw audio vectors
+
+    function resultArray = flattenArray(cellArray)
+       
+    % Step 1: Flatten the cell array into a single column
+    flattenedArray = cellArray(:);
+    
+    % Step 2: Remove empty cells
+    notEmptyCells = ~cellfun(@isempty, flattenedArray);
+    resultArray = flattenedArray(notEmptyCells);
+    end
 end
