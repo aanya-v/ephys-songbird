@@ -4,3 +4,4 @@
 *.fig
 notebooks/analysis_spike_entropy_fanofactor_2023_Dec_20.mlx
 notebooks/analysis_spike_fanofactor_2023_Dec_20.mlx
+data/processed/tSNE_syllable_spects/batchfile
