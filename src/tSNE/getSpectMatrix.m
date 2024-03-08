@@ -10,12 +10,12 @@ import statistics.toolbox.*
 Fs = 30000; %sampling rate in Hz
 
 spect_params = params.overlap_windowsize;
-numWindows = params.numWindows;
+numWindows = params.n_time_bins;
 minDur = params.min_max_duration(1); %minimum syllable duration in msec
 maxDur = params.min_max_duration(2); %maximum syllable duration in msec
 
 if nargin ==1    
-    spect_params = [0.9 4]; %[percent_overlap window_size_in_milliseconds]
+    spect_params = [0.5 8]; %[percent_overlap window_size_in_milliseconds]
     numWindows = 60; % takes the last 60 windows of the spectrogram
     minDur = 20;
     maxDur = 200;

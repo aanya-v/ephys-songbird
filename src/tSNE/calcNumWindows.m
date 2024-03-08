@@ -17,7 +17,7 @@ step_size_samples = window_size_samples - overlap_samples; % Step size in sample
 num_time_bins = ceil((audio_length_samples - window_size_samples) / step_size_samples + 1);
 
 % Display the result
-fprintf('Number of time bins: %d\n', num_time_bins);
+% fprintf('Number of time bins: %d\n', num_time_bins);
 
 
 end

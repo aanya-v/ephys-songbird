@@ -13,6 +13,8 @@ for i = 1:length(spect_uncut)
     end
 end
 
+disp maxColumns = maxColumns
+
 % Pad each cell with zeros to have equal number of columns
 for i = 1:length(spect_uncut)
     for j = 1:length(spect_uncut{i})
